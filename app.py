@@ -4,11 +4,11 @@ import pandas as pd
 import numpy as np
 from streamlit_card import card
 
-load_keywords = pickle.load(open("/home/omkar-desai/PycharmProjects/travel-recommender/venv/keywords.pkl", 'rb'))
-load_similarity = pickle.load(open("/home/omkar-desai/PycharmProjects/travel-recommender/venv/similarity.pkl",'rb'))
+load_keywords = pickle.load(open("keywords.pkl", 'rb'))
+load_similarity = pickle.load(open("similarity.pkl",'rb'))
 
-load_data4 = pickle.load(open("/home/omkar-desai/PycharmProjects/travel-recommender/venv/data4.pkl",'rb'))
-load_data5 = pickle.load(open("/home/omkar-desai/PycharmProjects/travel-recommender/venv/data5.pkl",'rb'))
+load_data4 = pickle.load(open("data4.pkl",'rb'))
+load_data5 = pickle.load(open("data5.pkl",'rb'))
 
 data4 = pd.DataFrame(load_data4)
 data5 = pd.DataFrame(load_data5)
@@ -34,7 +34,7 @@ def recommend(keyword):
 
             simi_indexs = sorted(list(enumerate(similar[0])),reverse=True,key=lambda x:x[1])[1:11]
         else:
-            print(places_index)
+#             print(places_index)
             similar = load_similarity[places_index[0]]
             simi_indexs = sorted(list(enumerate(similar[0])),reverse=True,key=lambda x:x[1])[1:11]
 
