@@ -34,7 +34,7 @@ def recommend(keyword):
 
             simi_indexs = sorted(list(enumerate(similar[0])),reverse=True,key=lambda x:x[1])[1:11]
         else:
-#             print(places_index)
+            print(places_index)
             similar = load_similarity[places_index[0]]
             simi_indexs = sorted(list(enumerate(similar[0])),reverse=True,key=lambda x:x[1])[1:11]
 
